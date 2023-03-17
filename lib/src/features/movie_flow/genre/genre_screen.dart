@@ -4,18 +4,17 @@ import 'package:my_movie_app/src/features/movie_flow/genre/genre.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../core/constants.dart';
+import '../../../core/widgets/transparent_text_icon_button.dart';
 
 class GenreScreen extends StatefulWidget {
   const GenreScreen({
     super.key,
     required this.nextPage,
     required this.previousPage,
-    // required this.l10n,
   });
 
   final VoidCallback nextPage;
   final VoidCallback previousPage;
-  // final AppLocalizations l10n;
 
   @override
   State<GenreScreen> createState() => _GenreScreenState();
@@ -56,50 +55,43 @@ class _GenreScreenState extends State<GenreScreen> {
         padding: const EdgeInsetsDirectional.symmetric(
           horizontal: kListItemSpacing * 2,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              l10n.selectGenreLabel,
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            const SizedBox(height: kMediumSpacing / 2),
-            Expanded(
-              child: ClipRRect(
-                borderRadius:
-                    const BorderRadius.all(Radius.circular(kBorderRadius)),
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: kListItemSpacing,
-                  crossAxisSpacing: kListItemSpacing,
-                  physics: const BouncingScrollPhysics(),
-                  children: genres
-                      .map(
-                        (genre) => GenreCard(
-                          genre: genre,
-                          onPressed: () => toggleSelected(genre),
-                        ),
-                      )
-                      .toList(),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                l10n.selectGenreLabel,
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              const SizedBox(height: kMediumSpacing / 2),
+              Expanded(
+                child: ClipRRect(
+                  borderRadius:
+                      const BorderRadius.all(Radius.circular(kBorderRadius)),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: kListItemSpacing,
+                    crossAxisSpacing: kListItemSpacing,
+                    physics: const BouncingScrollPhysics(),
+                    children: genres
+                        .map(
+                          (genre) => GenreCard(
+                            genre: genre,
+                            onPressed: () => toggleSelected(genre),
+                          ),
+                        )
+                        .toList(),
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: kMediumSpacing / 2),
-            Padding(
-              padding: const EdgeInsetsDirectional.only(end: kMediumSpacing),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    l10n.continueButton,
-                    style: theme.textTheme.labelLarge,
-                  ),
-                  const Icon(Icons.chevron_right_rounded),
-                ],
+              const SizedBox(height: kMediumSpacing / 2),
+              TransparentTextIconButton(
+                label: l10n.continueButton,
+                onPressed: widget.nextPage,
               ),
-            ),
-            const SizedBox(height: kMediumSpacing),
-          ],
+              const SizedBox(height: kMediumSpacing),
+            ],
+          ),
         ),
       ),
     );
