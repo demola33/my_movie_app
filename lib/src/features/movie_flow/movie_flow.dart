@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_movie_app/src/features/movie_flow/genre/genre_screen.dart';
+
+import 'landing/landing_screen.dart';
 
 class MovieFlow extends StatefulWidget {
   const MovieFlow({super.key});
@@ -35,7 +38,10 @@ class _MovieFlowState extends State<MovieFlow> {
     return PageView(
       controller: pageController,
       physics: const NeverScrollableScrollPhysics(),
-      children: const [],
+      children: [
+        LandingScreen(nextPage: nextPage, previousPage: previousPage),
+        GenreScreen(nextPage: nextPage, previousPage: previousPage),
+      ],
     );
   }
 }
