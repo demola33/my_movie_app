@@ -2,5 +2,22 @@
   "appTitle": "Movie Recommendation",
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  
+  "findMovieLabel": "Let's find a movie",
+  "selectGenreLabel": "Select your favorite genre",
+
+  "getStartedButton": "Get Started",
+  "continueButton": "Continue",
+
+  "action": "Action",
+  "comedy": "Comedy",
+  "horror": "Horror",
+  "anime": "Anime",
+  "drama": "Drama",
+  "family": "Family",
+  "romance": "Romance"
+  
 }
+
+

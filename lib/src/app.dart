@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
       onGenerateTitle: (BuildContext context) =>
           AppLocalizations.of(context)!.appTitle,
       darkTheme: CustomTheme.darkTheme(context),
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       home: const MovieFlow(),
     );
