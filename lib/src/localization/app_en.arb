@@ -6,6 +6,7 @@
   
   "findMovieLabel": "Let's find a movie",
   "selectGenreLabel": "Select your favorite genre",
+  "selectRatingLabel": "Select a minimum rating ranging \nfrom 1 - 10",
 
   "getStartedButton": "Get Started",
   "continueButton": "Continue",
