@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_movie_app/src/features/movie_flow/genre/genre_screen.dart';
+import 'package:my_movie_app/src/features/movie_flow/rating/rating_screen.dart';
 
 import 'landing/landing_screen.dart';
 
@@ -41,6 +42,7 @@ class _MovieFlowState extends State<MovieFlow> {
       children: [
         LandingScreen(nextPage: nextPage, previousPage: previousPage),
         GenreScreen(nextPage: nextPage, previousPage: previousPage),
+        RatingScreen(nextPage: nextPage, previousPage: previousPage),
       ],
     );
   }
