@@ -31,6 +31,17 @@ class CustomTheme {
         elevation: 0,
         color: Palette.almostBlack,
       ),
+      sliderTheme: SliderThemeData(
+        activeTrackColor: Palette.green500,
+        inactiveTrackColor: Colors.white,
+        thumbColor: Palette.green500,
+        valueIndicatorColor: Colors.white,
+        valueIndicatorTextStyle: theme.textTheme.bodyMedium?.copyWith(
+          color: Palette.green900,
+        ),
+        inactiveTickMarkColor: Colors.transparent,
+        activeTickMarkColor: Colors.transparent,
+      ),
       textTheme: theme.textTheme
           .copyWith(
             labelLarge: theme.textTheme.labelLarge?.copyWith(
